@@ -1,21 +1,3 @@
-// import { usePage, Link } from '@inertiajs/react';
-
-// export default function Navbar() {
-//   const { auth } = usePage().props;
-
-//   return (
-//     <div className="bg-white p-4 border-b flex justify-between items-center">
-//       <div className="text-lg font-semibold">Dashboard</div>
-//       <div className="flex items-center gap-4">
-//         <span className="text-sm">Hi, {auth.user.name}</span>
-//         <Link href={route('logout')} method="post" as="button" className="text-red-600 text-sm">Logout</Link>
-//       </div>
-//     </div>
-//   );
-// }
-
-
-
 import { Bell } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 

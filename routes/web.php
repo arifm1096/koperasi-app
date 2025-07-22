@@ -35,4 +35,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Route::get('/karyawan', fn () => Inertia::render('Karyawan/Index'))->name('karyawan.index');
     // Route::get('/pinjaman', fn () => Inertia::render('Pinjaman/Index'))->name('pinjaman.index');
 });
+
+
+route::get('/rute', [App\Http\Controllers\RuteController::class, 'index'])->name('rute.index');
 require __DIR__.'/auth.php';

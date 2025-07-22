@@ -22,46 +22,46 @@ export default function Sidebar() {
     <div
       className={`flex flex-col ${
         collapsed ? 'w-20' : 'w-64'
-      } h-screen bg-indigo-600 text-white transition-all duration-300 p-4 rounded-tr-2xl rounded-br-2xl`}
+      } h-screen bg-orange-600 text-white transition-all duration-300 p-4 rounded-tr-2xl rounded-br-2xl`}
     >
       {/* Toggle Button */}
       <div className="flex items-center justify-between mb-6 px-2">
         <button onClick={toggleSidebar} className="text-white focus:outline-none">
           <Menu size={24} />
         </button>
-        {!collapsed && <span className="text-xl font-bold tracking-wide">Koperasi</span>}
+        {!collapsed && <span className="text-xl font-bold tracking-wide">Ticket</span>}
       </div>
 
       {/* Menu */}
       <nav className="flex-1 space-y-1">
-        <SidebarLink href="/dashboard" icon={<Home size={18} />} label="Dashboard" collapsed={collapsed} />
+        <SidebarLink href="/dashboard" icon={<Home size={20} />} label="Dashboard" collapsed={collapsed} />
 
         {/* Master submenu */}
         <div>
           <button
             onClick={() => setOpenMaster(!openMaster)}
-            className={`w-full flex items-center justify-between px-2 py-2 hover:bg-indigo-500  transition ${
+            className={`full flex items-center justify-between px-2 py-2 hover:bg-orange-400  transition ${
               collapsed ? 'justify-center' : ''
             }`}
           >
-            <span className="flex items-center gap-2 text-sm">
-              <Folder size={18} />
+            <span className="flex items-center gap-2 text-md">
+              <Folder size={20} />
               {!collapsed && 'Master Data'}
             </span>
             {!collapsed &&
-              (openMaster ? <ChevronDown size={16} /> : <ChevronRight size={16} />)}
+              (openMaster ? <ChevronDown size={18} /> : <ChevronRight size={18} />)}
           </button>
 
           {!collapsed && openMaster && (
-            <div className="ml-6 mt-1 space-y-1 text-sm">
-              <SidebarLink href="/karyawan" label="Data Karyawan" collapsed={false} />
-              <SidebarLink href="/pinjaman" label="Data Pinjaman" collapsed={false} />
-              <SidebarLink href="/simpanan" label="Data Simpanan" collapsed={false} />
+            <div className="ml-6 mt-1 space-y-1 text-md">
+              <SidebarLink href="/karyawan" label="Data Tarif" collapsed={false} />
+              <SidebarLink href="/pinjaman" label="Data Maping" collapsed={false} />
+              <SidebarLink href="/rute" label="Data Rute" collapsed={false} />
             </div>
           )}
         </div>
 
-        <SidebarLink href="/laporan" icon={<FileText size={18} />} label="Laporan" collapsed={collapsed} />
+        <SidebarLink href="/laporan" icon={<FileText size={20} />} label="Laporan" collapsed={collapsed} />
       </nav>
 
       {/* User & Logout */}
@@ -81,7 +81,7 @@ export default function Sidebar() {
           href={route('logout')}
           method="post"
           as="button"
-          className={`flex items-center gap-4 px-4 py-2 hover:bg-indigo-500 transition-colors duration-200 ${
+          className={`flex items-center gap-4 px-4 py-2 hover:bg-orange-400 transition-colors duration-200 ${
             collapsed ? 'justify-center' : ''
           }`}
         >
@@ -97,7 +97,7 @@ function SidebarLink({ href, label, icon, collapsed }) {
   return (
     <Link
       href={href}
-      className={`flex items-center gap-2 px-2 py-2 rounded hover:bg-indigo-500 transition text-sm ${
+      className={`flex items-center gap-2 px-2 py-2 rounded hover:bg-orange-400 transition text-md ${
         collapsed ? 'justify-center' : ''
       }`}
     >
